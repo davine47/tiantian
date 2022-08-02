@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tiantian.demo.reppository.CitTrainingMapper">
+    <select id="selectYear" resultType="tiantian.demo.reppository.model.CitTrainingModel">
+        select * from `cit_training` where `year` >= #{minYear} and `year` &lt;= #{maxYear};
+    </select>
+</mapper>
