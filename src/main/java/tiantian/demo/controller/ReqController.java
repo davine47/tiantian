@@ -45,40 +45,29 @@ public class ReqController {
                         @RequestParam(value = "limit") Integer limit,
                         @RequestParam(value = "yearMin") Integer yearMin,
                        @RequestParam(value = "yearMax") Integer yearMax) {
-        System.out.println("page" + yearMin + "limit" + yearMax);
+        //System.out.println("page" + yearMin + "limit" + yearMax);
         Page<CitTrainingModel> pages = new Page<>(page,limit);
         IPage iPage = services.selectYear(pages, yearMin, yearMax);
         return ApiResp.buildSuccess(iPage.getRecords());
     }
     @RequestMapping("/getTime")
-    public ApiResp time(@RequestParam(value = "timeMin") Integer timeMin,
+    public ApiResp time(@RequestParam(value = "page") Integer page,
+                        @RequestParam(value = "limit") Integer limit,
+                        @RequestParam(value = "timeMin") Integer timeMin,
                         @RequestParam(value = "timeMax") Integer timeMax) {
-
-        List<CitTrainingModel> back = new ArrayList();
-        CitTrainingModel model = new CitTrainingModel();
-        model.setId(3);
-        model.setSex((byte) 3);
-        model.setTotalMile(333);
-        model.setYear(14);
-        model.setTotalTime(333);
-        back.add(model);
-
-        return ApiResp.buildSuccess(back);
+        Page<CitTrainingModel> pages = new Page<>(page,limit);
+        IPage iPage = services.selectTime(pages, timeMin, timeMax);
+        return ApiResp.buildSuccess(iPage.getRecords());
     }
 
     @RequestMapping("/getMile")
-    public ApiResp mile(@RequestParam(value = "mileMin") Integer mileMin,
+    public ApiResp mile(@RequestParam(value = "page") Integer page,
+                        @RequestParam(value = "limit") Integer limit,
+                        @RequestParam(value = "mileMin") Integer mileMin,
                         @RequestParam(value = "mileMax") Integer mileMax) {
 
-        List<CitTrainingModel> back = new ArrayList();
-        CitTrainingModel model = new CitTrainingModel();
-        model.setId(4);
-        model.setSex((byte) 4);
-        model.setTotalMile(444);
-        model.setYear(14);
-        model.setTotalTime(333);
-        back.add(model);
-
-        return ApiResp.buildSuccess(back);
+        Page<CitTrainingModel> pages = new Page<>(page,limit);
+        IPage iPage = services.selectMile(pages, mileMin, mileMax);
+        return ApiResp.buildSuccess(iPage.getRecords());
     }
 }

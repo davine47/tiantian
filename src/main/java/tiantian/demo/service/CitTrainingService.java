@@ -14,4 +14,15 @@ public interface CitTrainingService extends IService<CitTrainingModel> {
     IPage<CitTrainingModel> selectYear(Page<?> page,
                                        @Param("minYear")Integer minYear,
                                        @Param("maxYear")Integer maxYear);
+
+    IPage<CitTrainingModel> selectMile(Page<?> page,
+                                       @Param("minMile")Integer minMile,
+                                       @Param("maxMile")Integer maxMile);
+    IPage<CitTrainingModel> selectTime(Page<?> page,
+                                       @Param("minTime")Integer minTime,
+                                       @Param("maxTime")Integer maxTime);
+
+
+
+
 }

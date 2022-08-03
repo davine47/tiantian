@@ -4,4 +4,13 @@
     <select id="selectYear" resultType="tiantian.demo.reppository.model.CitTrainingModel">
         select * from `cit_training` where `year` >= #{minYear} and `year` &lt;= #{maxYear};
     </select>
+
+    <select id="selectMile" resultType="tiantian.demo.reppository.model.CitTrainingModel">
+        select * from `cit_training` where `total_mile` >= #{minMile} and `total_mile` &lt;= #{maxMile};
+    </select>
+
+    <select id="selectTime" resultType="tiantian.demo.reppository.model.CitTrainingModel">
+        select * from `cit_training` where `total_time` >= #{minTime} and `total_time` &lt;= #{maxTime};
+    </select>
+
 </mapper>

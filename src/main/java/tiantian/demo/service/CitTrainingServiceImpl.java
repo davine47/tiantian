@@ -21,4 +21,14 @@ public class CitTrainingServiceImpl extends ServiceImpl<CitTrainingMapper, CitTr
     public IPage<CitTrainingModel> selectYear(Page<?> page, Integer minYear, Integer maxYear) {
         return mapper.selectYear(page, minYear, maxYear);
     }
+
+    @Override
+    public IPage<CitTrainingModel> selectMile(Page<?> page, Integer minMile, Integer maxMile) {
+        return mapper.selectMile(page, minMile, maxMile);
+    }
+
+    @Override
+    public IPage<CitTrainingModel> selectTime(Page<?> page, Integer minTime, Integer maxTime) {
+        return mapper.selectTime(page, minTime, maxTime);
+    }
 }
