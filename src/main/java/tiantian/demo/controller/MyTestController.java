@@ -41,4 +41,8 @@ public class MyTestController {
         return "time";
     }
 
+    @RequestMapping("/echarts.js")
+    public String test4(Model model) {
+        return "echarts";
+    }
 }
